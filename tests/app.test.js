@@ -1,5 +1,5 @@
 const request = require('supertest');
-import app from '../src/index';
+const app= require('../src/index');
 
 describe('GET /', () => {
     it('should return a JSON response', async () => {
