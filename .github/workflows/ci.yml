@@ -1,0 +1,26 @@
+name: Node.js CI # Name of the GitHub Actions workflow
+
+on:
+    push: # This workflow runs when code is pushed to GitHub
+        branches: [ main ] # Only runs when code is pushed to the 'main' branch
+    pull_request: # This workflow also runs when a pull request is opened
+        branches: [ main ]
+
+jobs:
+    test: # Defines the "test" job that will run our CI steps
+        runs-on: ubuntu-latest # This job will run on the latest Ubuntu Linux version
+
+        steps:
+            - name: Checkout Repository # Step 1: Clone the repository from GitHub
+              uses: actions/checkout@v3 # GitHub-provided action to check out the repository
+
+            - name: Setup Node.js # Step 2: Install Node.js
+              uses: actions/setup-node@v3 # GitHub provided action to install Node.js
+              with:
+                node-version: 20 # Specifies the Node.js version to install
+
+            - name: Install Dependencies # Step 3: Install npm dependencies
+              run: npm install # Runs "nppm install" to install project dependencies
+
+            - name: Run Tests # Step 4: Run unit tests
+              run: npm test # Executes the test suite using "npm test"
