@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A CI/CD pipeline setup for a Nodejs based web application using GitHub Actions.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest",
     "start": "node src/server.js"
