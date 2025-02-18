@@ -7,5 +7,5 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello, Node.js CI/CD!' });
 });
 
-module.exports = app; // Export the app
+export default app; // Export the app
 
